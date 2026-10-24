@@ -1,37 +1,25 @@
 {
   "name": "jpay",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "JPay — QR payments for local merchants in Yogyakarta, settled on Monad.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npm run dev -w @jpay/web",
+    "build": "npm run build -w @jpay/web",
+    "start": "npm run start -w @jpay/web",
+    "lint": "npm run lint -w @jpay/web",
+    "typecheck": "npm run typecheck -w @jpay/web",
+    "check:chain": "node scripts/healthcheck.mjs",
+    "contracts:compile": "npm run compile -w @jpay/contracts",
+    "contracts:test": "npm run test -w @jpay/contracts",
+    "contracts:deploy:testnet": "npm run deploy:testnet -w @jpay/contracts",
+    "contracts:create-payment:testnet": "npm run create-payment:testnet -w @jpay/contracts"
   },
-  "dependencies": {
-    "@farcaster/mini-app-solana": "^1.1.3",
-    "@privy-io/react-auth": "^3.51.0",
-    "@privy-io/wagmi": "^4.0.19",
-    "@tanstack/react-query": "^5.104.5",
-    "@x402/evm": "^2.28.0",
-    "@x402/svm": "^2.28.0",
-    "clsx": "^2.1.1",
-    "next": "14.2.35",
-    "qrcode.react": "^4.2.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "tailwind-merge": "^3.7.0",
-    "viem": "2.57.5",
-    "wagmi": "^2.19.5"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.35",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+  "engines": {
+    "node": ">=18.17"
   }
 }
