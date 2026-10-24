@@ -58,8 +58,8 @@ export default function HomePage() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Link href="#pay" className="btn-primary px-5 py-3">
-              Start a payment
+            <Link href="/merchant" className="btn-primary px-5 py-3">
+              Create a payment
               <ArrowRightIcon className="h-4 w-4" />
             </Link>
             <Link

@@ -17,6 +17,20 @@ export function SiteHeader() {
         </Link>
 
         <div className="flex items-center gap-2">
+          <nav className="mr-1 hidden items-center gap-1 sm:flex">
+            <Link
+              href="/merchant"
+              className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-white/[0.06] hover:text-foreground"
+            >
+              Merchant
+            </Link>
+            <Link
+              href="/dashboard"
+              className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-muted transition hover:bg-white/[0.06] hover:text-foreground"
+            >
+              Dashboard
+            </Link>
+          </nav>
           <NetworkSwitcher />
           <ConnectWalletButton />
         </div>

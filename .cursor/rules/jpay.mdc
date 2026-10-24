@@ -1,0 +1,17 @@
+---
+description: JPay conventions for the Next.js app and Monad payment contract
+globs: src/**/*.{ts,tsx},contracts/**/*.sol
+alwaysApply: false
+---
+
+# JPay project rules
+
+- Read `AGENTS.md` first; it is the source of truth for commands, routes, and onchain facts.
+- Payments are native MON only. Never add ERC-20 approval or transfer flows without an explicit request.
+- `pay()` must send exactly `payment.amount` as `msg.value`; do not add tips, fees, or platform cuts.
+- Treat the merchant self-payment revert as expected behavior; surface it as a clear UI message, not a crash.
+- Use wagmi/viem hooks and `src/lib/contracts/jpay-payment.ts` helpers. Do not invent a backend or indexer for reads.
+- Keep UI copy in English and mobile-first; primary color is `#6E54FF`.
+- Preserve loading, error, success, wrong-network, and insufficient-balance states in any UI change.
+- Never hardcode private keys or real secrets. `.env.local` and `contracts/.env` stay untracked.
+- After edits, run `npx tsc --noEmit` and `npm run lint`.

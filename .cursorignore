@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+contracts/artifacts/
+contracts/cache/
+contracts/typechain-types/
+.env
+.env.local
+.env.*.local
