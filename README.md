@@ -42,7 +42,7 @@ JPay is a mobile-first checkout built around one small, auditable contract:
 
 | Item | Link |
 | --- | --- |
-| Live app | https://jpay-kfr64lp81-jpay.vercel.app |
+| Live app | https://jpay.vercel.app |
 | Demo video | _Add your 60–90 second video link_ |
 | Social post | _Add your X/Twitter post link_ |
 | Contract | [Monadscan](https://testnet.monadscan.com/address/0x654DDF8dc6e31C9e024E4009DBb3830b5E506E9a) |
