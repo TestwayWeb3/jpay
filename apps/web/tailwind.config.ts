@@ -54,6 +54,10 @@ const config: Config = {
           "0%, 100%": { opacity: "0.4", transform: "scale(0.95)" },
           "50%": { opacity: "0.7", transform: "scale(1.05)" },
         },
+        "splash-dot": {
+          "0%, 100%": { opacity: "0.3", transform: "translateY(0)" },
+          "50%": { opacity: "1", transform: "translateY(-3px)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
@@ -61,6 +65,7 @@ const config: Config = {
         "splash-logo": "splash-logo 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
         "splash-text": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both",
         "splash-glow": "splash-glow 2.4s ease-in-out infinite",
+        "splash-dot": "splash-dot 1.1s ease-in-out infinite",
       },
     },
   },

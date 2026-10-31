@@ -70,6 +70,15 @@ export function SplashScreen() {
         <span className="animate-splash-text text-2xl font-semibold tracking-tight text-white">
           JPay
         </span>
+        <div className="flex items-center gap-2" aria-hidden="true">
+          {[0, 1, 2].map((index) => (
+            <span
+              key={index}
+              className="h-1.5 w-1.5 rounded-full bg-monad-300 animate-splash-dot"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
