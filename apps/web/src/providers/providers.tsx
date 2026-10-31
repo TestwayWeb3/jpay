@@ -44,7 +44,7 @@ export function Providers({ children }: { children: ReactNode }) {
         appearance: {
           theme: "dark",
           accentColor: "#6E54FF",
-          logo: "/jpay-mark.svg",
+          logo: "/jpay-mark.svg?v=2",
           landingHeader: "Welcome to JPay",
           loginMessage: "Just Pay with Monad",
           walletList: [

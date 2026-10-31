@@ -46,10 +46,22 @@ const config: Config = {
           "0%, 100%": { opacity: "0.55" },
           "50%": { opacity: "1" },
         },
+        "splash-logo": {
+          "0%": { opacity: "0", transform: "scale(0.82)" },
+          "60%": { opacity: "1", transform: "scale(1.04)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "splash-glow": {
+          "0%, 100%": { opacity: "0.35", transform: "scale(0.92)" },
+          "50%": { opacity: "0.75", transform: "scale(1.08)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
         "pulse-soft": "pulse-soft 2.4s ease-in-out infinite",
+        "splash-logo": "splash-logo 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
+        "splash-text": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both",
+        "splash-glow": "splash-glow 2.4s ease-in-out infinite",
       },
     },
   },
