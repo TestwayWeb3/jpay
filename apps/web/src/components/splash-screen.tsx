@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 import { JPayMark } from "@/components/jpay-mark";
 import { cn } from "@/lib/cn";
 
-const SPLASH_HOLD_MS = 1600;
+const SPLASH_LOGO_MS = 800;
+const SPLASH_HOLD_MS = 1500;
 const SPLASH_FADE_MS = 500;
 
 export function SplashScreen() {
@@ -35,10 +36,13 @@ export function SplashScreen() {
   useEffect(() => {
     if (!visible) return;
 
-    const fadeTimer = setTimeout(() => setFading(true), SPLASH_HOLD_MS);
+    const fadeTimer = setTimeout(
+      () => setFading(true),
+      SPLASH_LOGO_MS + SPLASH_HOLD_MS,
+    );
     const hideTimer = setTimeout(
       () => setVisible(false),
-      SPLASH_HOLD_MS + SPLASH_FADE_MS,
+      SPLASH_LOGO_MS + SPLASH_HOLD_MS + SPLASH_FADE_MS,
     );
 
     return () => {
@@ -52,16 +56,16 @@ export function SplashScreen() {
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[#23105B] transition-opacity duration-500",
+        "fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-background transition-opacity duration-500 ease-out",
         fading && "pointer-events-none opacity-0",
       )}
       aria-hidden="true"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_45%,rgba(110,84,255,0.55),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_45%_at_50%_45%,rgba(110,84,255,0.22),transparent_70%)]" />
       <div className="relative flex flex-col items-center gap-4">
         <div className="relative flex items-center justify-center">
-          <div className="absolute h-32 w-32 rounded-full bg-monad/50 blur-2xl animate-splash-glow" />
-          <JPayMark className="relative h-24 w-24 animate-splash-logo" />
+          <div className="absolute h-40 w-40 rounded-full bg-monad/30 blur-3xl animate-splash-glow" />
+          <JPayMark className="relative h-28 w-28 animate-splash-logo" />
         </div>
         <span className="animate-splash-text text-2xl font-semibold tracking-tight text-white">
           JPay
